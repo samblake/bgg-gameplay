@@ -1,0 +1,57 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Games Played</title>
+	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../../excanvas.min.js"></script><![endif]-->
+	<script language="javascript" type="text/javascript" src="flot/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="flot/jquery.flot.js"></script>
+	<script language="javascript" type="text/javascript" src="flot/flot.stackpercent/jquery.flot.stackpercent.js"></script>
+	<script language="javascript" type="text/javascript" src="flot/flot.tooltip/js/jquery.flot.tooltip.js"></script>
+	<script language="javascript" type="text/javascript" src="json.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		var options = {
+	        series: {
+				stackpercent : true,
+				lines: {
+		            show: true,
+		            fill: true,
+					fillColor: {
+						colors:[{opacity: 0.7},{opacity: 0.7}]
+					}
+		        },
+		        points: {
+		            show: false
+		        },
+	        },
+			legend : {
+				container : "#legends",
+				noColumns : 10
+			},
+		    grid: {
+		        borderWidth: 1,
+		        hoverable: true 
+		    },
+		    tooltip: true,
+			tooltipOpts: {
+				content: "<b>%s</b> : %y)"
+			},
+	        xaxis: {
+	        	tickSize : 1,
+    			ticks: labels
+	        },
+	        yaxis: {max:100}
+	    };
+		$.plot("#placeholder", data, options);
+	});
+	</script>
+</head>
+<body>
+	<div>
+		<div id="placeholder" style="height: 750px; width: 1000"></div>
+		<div id="legends" style="height: 75px; width: 100"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+build/
+Include/
+Lib/
+Scripts/
+*.data
