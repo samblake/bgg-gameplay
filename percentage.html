@@ -14,7 +14,7 @@
 	$(function() {
 		var options = {
 	        series: {
-				stackpercent : false,
+				stackpercent : true,
 				lines: {
 		            show: true,
 		            fill: true,
@@ -23,7 +23,7 @@
 					}
 		        },
 		        bars: {
-		        	show: false,
+		        	show: true,
 		        	fill: false,
 		        	lineWidth: 0
 		        },
@@ -48,7 +48,7 @@
     			ticks: labels
 	        },
 	        yaxis: {
-	        	//max: 100
+	        	max: 100
 	        }
 	    };
 		$.plot("#placeholder", data, options);
