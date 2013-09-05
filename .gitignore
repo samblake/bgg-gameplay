@@ -4,3 +4,4 @@ Lib/
 Scripts/
 *.data
 json.js
+*.pyc
