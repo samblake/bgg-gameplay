@@ -26,8 +26,13 @@ class Game:
         month = datetime(date.year, date.month, 1)
         self.plays[month] = plays
 
+    def maxFilteredPlays(self, dateRange):
+        minMonth = max(popularGames.itervalues().next().plays) - dateRange
+        filtered = filter(lambda d: d[0] > minMonth, self.plays.iteritems())
+        return max(map(lambda x: x[1], filtered))
+
     def maxPlays(self):
-        return max(self.plays.values())
+        return maxPlays(self.plays.values())
 
     def totalPlays(self):
         return sum(self.plays.values())
@@ -146,11 +151,13 @@ def scrapeTotalPlays():
 
 def generateData():
     data = []
-    for game in sorted(popularGames.values(), key=lambda g: 1-g.maxPlays()):
-        if debug: print(game.name + " " + str(game.maxPlays()))
+    minMonth = max(popularGames.itervalues().next().plays) - dateRange 
+    for game in sorted(popularGames.values(), key=lambda g: 1-g.maxFilteredPlays(dateRange)):
+        if debug: print("Adding data for " + game.name)
         d = []
         for date in sorted(game.plays): # .iterkeys()?
-            d.append([len(d), game.plays[date]])
+            if date > minMonth:
+                d.append([len(d), game.plays[date]])   
         data.append({'label': game.name, 'data' : d})
         if (len(data) is maxGames): break
     return data
@@ -175,9 +182,9 @@ def generateGraphData():
 debug = False
 popularGames = {}
 now = datetime.now()
-numPages = 1
-maxGames = 50
-dateRange = relativedelta(years=10)
+numPages = 5
+maxGames = 25
+dateRange = relativedelta(years=5)
 bggSite = "http://boardgamegeek.com/"   
 dataFile = "stats.data"
 
