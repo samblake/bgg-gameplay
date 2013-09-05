@@ -5,7 +5,7 @@ import urllib2
 import gzip
 import itertools
 
-debug = True
+debug = False
 
 def noPagination(page, p):
 	return page

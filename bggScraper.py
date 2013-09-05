@@ -7,7 +7,7 @@ from playsScraper import PlaysScraper
 
 from datetime import datetime
 
-debug = True
+debug = False
 bggSite = "http://boardgamegeek.com/"
 
 class BGGScraper(object):

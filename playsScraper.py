@@ -1,6 +1,6 @@
 from scraper import Scraper
 
-debug = True
+debug = False
 
 class PlaysScraper(object):
 	def __init__(self, site, maxTries=5):

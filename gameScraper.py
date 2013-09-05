@@ -2,7 +2,7 @@ from scraper import Scraper
 from game import Game
 import operator
 
-debug = True
+debug = False
 url = "browse/boardgame/page/"
 
 class GameScraper(object):
