@@ -19,7 +19,6 @@ class GameScraper(object):
 		for num in xrange(1,100):
 		    divId = "results_objectname" + str(num)
 		    games.append(self.parseGame(soup, divId))
-		    if num == 3: return games
 		return games
 
 	def parseGame(self, soup, divId):
