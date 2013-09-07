@@ -29,4 +29,4 @@ class FlotGen(object):
 	    for date in sorted(self.games.itervalues().next().plays):
 	        labels.append([str(i), date.strftime('%m-%y')])
 	        i += 1
-	        return labels
+	    return labels
