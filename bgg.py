@@ -23,7 +23,7 @@ def generateGraphData(gameData):
         f.write("var labels = " + json.dumps(labels, indent=4) + ";")
 
 maxGames = 50
-dateRange = relativedelta(years=1)
+dateRange = relativedelta(years=6)
 dataFile = "stats.data"
 numPages = 1
 
