@@ -26,7 +26,9 @@ class FlotGen(object):
 	def generateLabels(self):
 	    labels = []
 	    i = 0
+	    minMonth = max(self.games.itervalues().next().plays) - self.dateRange
 	    for date in sorted(self.games.itervalues().next().plays):
+	    	if date < minMonth: continue
 	        labels.append([str(i), date.strftime('%m-%y')])
 	        i += 1
 	    return labels
