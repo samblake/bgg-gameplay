@@ -1,7 +1,0 @@
-build/
-Include/
-Lib/
-Scripts/
-*.data
-json.js
-*.pyc
