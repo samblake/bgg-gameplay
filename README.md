@@ -1,4 +1,4 @@
-bgg-scraper
-===========
+BGG Gameplay
+===========™
 
-Scrapes game play counts from boardgamegeek.com and generates charts of the top games.
+Finds play counts of the top 100 games on boardgamegeek.com and generates charts of the most played games.
